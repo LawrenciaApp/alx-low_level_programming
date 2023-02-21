@@ -1,10 +1,11 @@
 #include "main.h"
-	/**
-	 * main - print _putchar
-	 * is written by law
-	 * Description: void message
-	 * Return: 0
-	 */
+
+/**
+  * main - print _putchar
+  * is written by law
+  * Description: void message
+  * Return: Always 0
+  */
 int main(void)
 {
 	_putchar('_');
