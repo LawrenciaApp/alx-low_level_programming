@@ -2,6 +2,7 @@
 	/**
 	 * main - print _putchar
 	 * is written by law
+	 * DESCRIPTION: void message
 	 * Return: 0
 	 */
 
