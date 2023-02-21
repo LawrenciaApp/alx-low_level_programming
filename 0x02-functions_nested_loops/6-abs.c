@@ -1,24 +1,21 @@
 #include "main.h"
 
 /**
- * print_sign - functions for lowercase checks
- * *n: char to be checked
- * Return 1 for lowercase  and 0 for anything else
+ * _abs - Computes the absolute value of an integer.
+ * @c: The number to be computed.
+ * Return: Absolute value of number or zero
  */
-int _abs(int n)
+
+int _abs(int c)
+
 {
-if (n > 0)
-{
-return (n);
-}
-if (n == 0)
-{
-return (n);
-}
-if (n < 0)
-{
-n = n * -i;
-return (n);
-}
-return (0);
+
+	if (c < 0)
+	{
+	int abs_val;
+
+	abs_val = c * -1;
+	return (abs_val);
+	}
+	return (c);
 }
