@@ -8,18 +8,19 @@
  */
 void print_line(int n)
 {
-int i;
+	int i;
 
-if (n < 1)
-{
-putchar('\n');
+	if (n < 1)
+	{
+		putchar('\n');
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
+		{
+			putchar('_');
+		}
+		putchar('\n');
+	}
 }
-else
-{
-for (i = 0; i < n; i++)
-{
-putchar('_');
-}
-putchar('\n');
-}
-}
+
