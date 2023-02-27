@@ -1,18 +1,17 @@
 #include "main.h"
 
 /**
- * _strlen - check the code
+ * swap_int - check the code
  *
- * @s: param
+ * @a: param
+ * @b: param1
  * Return: Always 0.
  */
-int _strlen(char *s)
+void swap_int(int *a, int *b)
 {
-	int len = 0;
+	int temp;
 
-	while (*(s + len) != '\0')
-	{
-		len++;
-	}
-	return (len);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
