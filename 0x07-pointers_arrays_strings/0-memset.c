@@ -1,23 +1,21 @@
 #include "main.h"
 
 /**
- * _memcpy - check the code
+ * _memset - check the code
  *
- * @dest: param1
- * @src: param2
+ * @s: param1
+ * @b: param2
  * @n: param 3
  * Return: pointer.
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
-
-	i = 0;
+	unsigned int i = 0;
 
 	while (i < n)
 	{
-		*(dest + i) = *(src + i);
+		*(s + i) = b;
 		i++;
 	}
-	return (dest);
+	return (s);
 }
