@@ -1,18 +1,29 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * _strpbrk - check the code
  *
- * Return: Always 0.
+ * @s: param1
+ * @accept: param2
+ * Return: pointer.
  */
-int main(void)
+char *_strpbrk(char *s, char *accept)
 {
-char *s = "hello, world";
-char *f = "world";
-char *t;
+	int i = 0;
 
-t = _strpbrk(s, f);
-printf("%s\n", t);
-return (0);
+	while (*(s + i) != '\0')
+	{
+		int j = 0;
+
+		while (*(accept + j) != '\0')
+		{
+			if (*(s + i) == *(accept + j))
+			{
+				return (&s[i]);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (NULL);
 }
