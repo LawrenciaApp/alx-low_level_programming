@@ -1,36 +1,41 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - ...
+ * add_node_end - ...
  *
  * @head: ...
- * @n: ...
+ * @str: ...
  * Return: ...
  */
-
-listint_t *add_nodeint_end(listint_t **head, const int n)
+list_t *add_node_end(list_t **head, const char *str)
 {
-listint_t *newNode;
-listint_t *temp = *head;
+list_t *new_node;
+list_t *last_node;
 
-newNode = (listint_t *) malloc(sizeof(listint_t));
-if (newNode == NULL)
+new_node = malloc(sizeof(list_t));
+if (new_node == NULL)
+{
 return (NULL);
+}
+new_node->str = strdup(str);
+new_node->len = strlen(str);
+new_node->next = NULL;
 
-newNode->n = n;
-newNode->next = NULL;
-
+    /* if list is empty, make new node the head */
 if (*head == NULL)
 {
-*head = newNode;
-return (newNode);
-}
-while (temp->next != NULL)
-{
-temp = temp->next;
+*head = new_node;
+return (new_node);
 }
 
-temp->next = newNode;
-return (newNode);
+    /* find last node and update its next pointer */
+last_node = *head;
+while (last_node->next != NULL)
+{
+last_node = last_node->next;
+}
+last_node->next = new_node;
+
+return (new_node);
 }
 
