@@ -1,20 +1,52 @@
-#include "lists.h"
+# include "lists.h"
 
 /**
- * add_nodeint - ...
+ * add_node -  00....
  *
  * @head: ...
- * @n: ...
+ * @str: ...
  * Return: ...
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+list_t *add_node(list_t **head, const char *str)
 {
-listint_t *newNode = (listint_t *) malloc(sizeof(listint_t));
+char *str_copy;
 
-if (newNode == NULL)
+list_t *new_node = malloc(sizeof(list_t));
+if (new_node == NULL)
+{
 return (NULL);
-newNode->n = n;
-newNode->next = *head;
-*head = newNode;
-return (newNode);
+
+}
+
+str_copy = strdup(str);
+if (str_copy == NULL)
+{
+free(new_node);
+return (NULL);
+
+}
+new_node->str = str_copy;
+new_node->len = _strlen(str);
+new_node->next = *head;
+*head = new_node;
+
+return (new_node);
+}
+
+/**
+ * _strlen - ...
+ *
+ * @s: ...
+ * Return: ...
+ */
+int _strlen(const char *s)
+{
+int c = 0;
+
+while (*s)
+{
+s++;
+c++;
+}
+return (c);
 }
