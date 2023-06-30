@@ -1,22 +1,19 @@
 #include "lists.h"
 
 /**
- * listint_len - ...
+ * list_len - ....
  *
  * @h: ...
  * Return: ...
  */
-size_t listint_len(const listint_t *h)
+size_t list_len(const list_t *h)
 {
-const listint_t *temp = h;
-size_t count = 0;
+	size_t count = 0;
 
-if (h == NULL)
-return (0);
-while (temp != NULL)
-{
-count++;
-temp = temp->next;
-}
-return (count);
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
 }
