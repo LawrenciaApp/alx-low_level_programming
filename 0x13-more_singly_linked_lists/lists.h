@@ -1,40 +1,38 @@
-#ifndef _LINKED_LIST
-#define _LINKED_LIST
+#ifndef LISTS_H
+#define LISTS_H
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 /**
- * struct node - singly linked list
- * @n: int - (malloc'ed int)
+ * struct listint_s - singly linked list
+ * @n: integer
  * @next: points to the next node
  *
  * Description: singly linked list node structure
- * for alx project
+ *
  */
-typedef struct node
+typedef struct listint_s
 {
 	int n;
-	struct node *next;
-}
-listint_t;
+	struct listint_s *next;
+} listint_t;
 
 /**
- * struct listp_s - singly linked list
- * @p: pointers of nodes
- * @next: points to the next node
+ * struct tracker - singly linked list
+ * @slow: points to listint_t
+ * @fast: points to listint_t
  *
- * Description: singly linked list of pointers
+ * Description: singly linked list node structure
+ *
  */
-typedef struct listp_s
+typedef struct tracker
 {
-	void *p;
-	struct listp_s *next;
-} listp_t;
+	listint_t *slow;
+	listint_t *fast;
+} tracker_t;
 
-
-int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -49,5 +47,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
-
-#endif /* MAIN_H */
+listint_t *find_listint_loop(listint_t *head);
+listint_t *has_loop(listint_t **head);
+listint_t *get_last_next(listint_t **h, listint_t *slow);
+#endif /* LISTS_H */
